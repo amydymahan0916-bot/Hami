@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>حامیان حدیث اکبرزاده</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -22,8 +22,7 @@ overflow:hidden;
 display:flex;
 justify-content:center;
 align-items:center;
-background:
-linear-gradient(135deg,#0a5c3b,#0f7c52);
+background:linear-gradient(135deg,#0b5d3c,#138659);
 padding:15px;
 }
 
@@ -32,22 +31,22 @@ width:100%;
 max-width:420px;
 background:rgba(255,255,255,.12);
 backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,.15);
 border-radius:30px;
-padding:20px;
+padding:22px;
 text-align:center;
+border:1px solid rgba(255,255,255,.2);
 box-shadow:0 15px 40px rgba(0,0,0,.25);
 color:white;
 }
 
 .photo{
-width:120px;
-height:120px;
+width:130px;
+height:130px;
 border-radius:50%;
 object-fit:cover;
 border:4px solid white;
-margin:auto;
 display:block;
+margin:auto;
 box-shadow:0 0 25px rgba(255,255,255,.35);
 }
 
@@ -57,14 +56,17 @@ font-weight:800;
 margin-top:15px;
 }
 
-.job{
+.position{
 font-size:15px;
 opacity:.9;
 margin-top:5px;
 }
 
 .slogan{
-margin-top:12px;
+margin-top:15px;
+padding:12px;
+background:rgba(255,255,255,.1);
+border-radius:15px;
 font-size:18px;
 line-height:1.8;
 color:#ffe082;
@@ -74,37 +76,37 @@ font-weight:700;
 .counter-box{
 margin-top:20px;
 background:white;
-color:#0b6d46;
-padding:18px;
 border-radius:25px;
+padding:20px;
 }
 
 .count{
-font-size:48px;
+font-size:52px;
 font-weight:800;
+color:#0b5d3c;
 }
 
 .title{
 font-size:18px;
 margin-top:8px;
+color:#444;
 }
 
 .btn{
+width:100%;
 margin-top:18px;
+padding:13px;
+border:none;
+border-radius:50px;
 background:#c62828;
 color:white;
-border:none;
-padding:12px 20px;
-font-size:15px;
+font-size:16px;
 font-weight:700;
-border-radius:50px;
 cursor:pointer;
-width:100%;
-transition:.3s;
 }
 
 .btn:active{
-transform:scale(.96);
+transform:scale(.97);
 }
 
 .msg{
@@ -126,13 +128,13 @@ opacity:.9;
 
 <div class="card">
 
-<img src="hadis.jpg" class="photo">
+<img src="hadis.jpg" class="photo" alt="حدیث اکبرزاده">
 
 <div class="name">
 حدیث اکبرزاده
 </div>
 
-<div class="job">
+<div class="position">
 نامزد شورای شهر نورآباد
 </div>
 
@@ -143,7 +145,7 @@ opacity:.9;
 <div class="counter-box">
 
 <div id="count" class="count">
-۸۶۳۹
+۸٬۵۱۹
 </div>
 
 <div class="title">
@@ -159,7 +161,7 @@ opacity:.9;
 <div id="msg" class="msg"></div>
 
 <div class="city">
-شهر نورآباد
+نورآباد
 </div>
 
 </div>
@@ -169,8 +171,8 @@ opacity:.9;
 let count = localStorage.getItem("hadisSupporters");
 
 if(!count){
-count = 1000;
-localStorage.setItem("hadisSupporters",1000);
+count = 8519;
+localStorage.setItem("hadisSupporters",8519);
 }
 
 document.getElementById("count").innerText =
@@ -182,6 +184,8 @@ if(localStorage.getItem("hadisSupported")){
 
 document.getElementById("msg").innerHTML =
 "⚠️ شما قبلاً حمایت خود را ثبت کرده‌اید";
+
+document.getElementById("msg").style.color = "#ffcccb";
 
 return;
 }
@@ -197,9 +201,11 @@ Number(count).toLocaleString('fa-IR');
 document.getElementById("msg").innerHTML =
 "✅ حمایت شما با موفقیت ثبت شد";
 
+document.getElementById("msg").style.color = "#b9ffb9";
+
 }
 
 </script>
 
 </body>
-</html>
+  </html>
