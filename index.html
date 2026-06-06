@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حامیان حدیث اکبرزاده</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Vazirmatn',sans-serif;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+background:
+linear-gradient(135deg,#0a5c3b,#0f7c52);
+padding:15px;
+}
+
+.card{
+width:100%;
+max-width:420px;
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.15);
+border-radius:30px;
+padding:20px;
+text-align:center;
+box-shadow:0 15px 40px rgba(0,0,0,.25);
+color:white;
+}
+
+.photo{
+width:120px;
+height:120px;
+border-radius:50%;
+object-fit:cover;
+border:4px solid white;
+margin:auto;
+display:block;
+box-shadow:0 0 25px rgba(255,255,255,.35);
+}
+
+.name{
+font-size:30px;
+font-weight:800;
+margin-top:15px;
+}
+
+.job{
+font-size:15px;
+opacity:.9;
+margin-top:5px;
+}
+
+.slogan{
+margin-top:12px;
+font-size:18px;
+line-height:1.8;
+color:#ffe082;
+font-weight:700;
+}
+
+.counter-box{
+margin-top:20px;
+background:white;
+color:#0b6d46;
+padding:18px;
+border-radius:25px;
+}
+
+.count{
+font-size:48px;
+font-weight:800;
+}
+
+.title{
+font-size:18px;
+margin-top:8px;
+}
+
+.btn{
+margin-top:18px;
+background:#c62828;
+color:white;
+border:none;
+padding:12px 20px;
+font-size:15px;
+font-weight:700;
+border-radius:50px;
+cursor:pointer;
+width:100%;
+transition:.3s;
+}
+
+.btn:active{
+transform:scale(.96);
+}
+
+.msg{
+margin-top:12px;
+font-size:14px;
+font-weight:700;
+min-height:20px;
+}
+
+.city{
+margin-top:15px;
+font-size:14px;
+opacity:.9;
+}
+
+</style>
+</head>
+<body>
+
+<div class="card">
+
+<img src="hadis.jpg" class="photo">
+
+<div class="name">
+حدیث اکبرزاده
+</div>
+
+<div class="job">
+نامزد شورای شهر نورآباد
+</div>
+
+<div class="slogan">
+صدای مردم برای شهری بهتر
+</div>
+
+<div class="counter-box">
+
+<div id="count" class="count">
+۱۰۰۰
+</div>
+
+<div class="title">
+حامیان حدیث اکبرزاده
+</div>
+
+</div>
+
+<button class="btn" onclick="support()">
+✓ من هم حامی او هستم
+</button>
+
+<div id="msg" class="msg"></div>
+
+<div class="city">
+شهر نورآباد
+</div>
+
+</div>
+
+<script>
+
+let count = localStorage.getItem("hadisSupporters");
+
+if(!count){
+count = 1000;
+localStorage.setItem("hadisSupporters",1000);
+}
+
+document.getElementById("count").innerText =
+Number(count).toLocaleString('fa-IR');
+
+function support(){
+
+if(localStorage.getItem("hadisSupported")){
+
+document.getElementById("msg").innerHTML =
+"⚠️ شما قبلاً حمایت خود را ثبت کرده‌اید";
+
+return;
+}
+
+count++;
+
+localStorage.setItem("hadisSupporters",count);
+localStorage.setItem("hadisSupported","yes");
+
+document.getElementById("count").innerText =
+Number(count).toLocaleString('fa-IR');
+
+document.getElementById("msg").innerHTML =
+"✅ حمایت شما با موفقیت ثبت شد";
+
+}
+
+</script>
+
+</body>
+</html>
